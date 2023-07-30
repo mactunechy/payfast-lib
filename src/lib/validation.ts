@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-const PayfastPaymentSchema = z.object({
+export const PayfastPaymentSchema = z.object({
   name_first: z.string().optional(),
   name_last: z.string().optional(),
   email_address: z.string().nonempty(),
@@ -25,5 +25,3 @@ const PayfastPaymentSchema = z.object({
     .enum(["eft", "cc", "dc", "mp", "mc", "sc", "ss", "zp", "mt", "rcs"])
     .optional(),
 });
-
-export { PayfastPaymentSchema };
