@@ -1,1 +1,1 @@
-export { configureExpressHandler } from "./configureHandler";
+export { configurePayfastExpressHandler } from "./configureHandler";

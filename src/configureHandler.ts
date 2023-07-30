@@ -5,7 +5,7 @@ import { PayfastConfig } from "./types";
 /**
  * This function invocation should come below  `app.use(express.json())`
  */
-export const configureExpressHandler = (
+export const configurePayfastExpressHandler = (
   app: Application,
   config: PayfastConfig
 ) => {
