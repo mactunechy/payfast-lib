@@ -1,0 +1,39 @@
+# Node.js / npm
+node_modules/
+npm-debug.log
+yarn-error.log
+*.env
+.env
+
+# Dependency directories
+jspm_packages/
+bower_components/
+
+# Output files
+dist/
+build/
+out/
+*.js.map
+
+# IDE / Editor specific
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+
+# Logs
+*.log
+
+# Optional: Uncomment the following lines if you use TypeScript
+# .tsbuildinfo
+# tsconfig.tsbuildinfo
