@@ -10,6 +10,10 @@ configureExpressHandler(app, {
   merchant_key: "7itf1mlh62876",
   return_url: "http://localhost:3000/return",
   cancel_url: "http://localhost:3000/cancel",
+  /**
+   * Recieve instant payment notifications (IPNs) to this notify webhook. create the webbook on your.
+   * This webhook will be called by payfast with the request payload as the details of the payment.
+   */
   notify_url: "http://localhost:3000/notify",
   env: "sandbox",
   passPhrase: "Shoerehab123",
