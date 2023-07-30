@@ -1,6 +1,6 @@
 {
   "name": "payfast-lib",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "A flexible easy to use payfast express handler for Node.js applications",
   "main": "dist/index.js",
   "scripts": {
