@@ -212,6 +212,66 @@ __NOTE__: use `https://www.payfast.co.za/onsite/engine.js` for __production__ en
 
 ```
 
+## Next.js 13 support
+Add a new payfast api route to your project by creating the following folder structure
+```
+app
+└── api
+    └── payfast
+        └── route.ts
+
+```
+add the following lines of code to the `route.js`
+```ts
+import { nextPayfastHandler } from "payfast-lib";
+
+export const POST = nextPayfastHandler({
+  merchant_id: "{YOUR_MERCHANT_ID}",
+  merchant_key: "{YOUR_MERCHANT_KEY}",
+  return_url: "{YOUR_RETURN_URL}"
+  cancel_url: "{YOUR_CANCEL_URL}",
+  /**
+   * Recieve instant payment notifications (IPNs) to this notify webhook. create the webbook on your.
+   * This webhook will be called by payfast with the request payload as the details of the payment.
+   */
+  notify_url: "{YOUR_NOTIFY_URL}",
+  env: "sandbox", // "prod" for your production environment
+  passPhrase: "{YOUR_PAYFAST_PASSPHRASE}",
+});
+
+```
+
+- send a `POST` request to your application on the following endpoint
+  `/api/payfast`
+
+### payload: 
+
+```json
+    {
+      "name_first": "{customer_name}",
+      "name_last": "{customer_lastname}",
+      "email_address": "{customer_email}",
+      "amount": "{amount}",
+      "item_name": "test1"
+    }
+
+```
+
+### Response:
+```js
+  {
+    "uuid": "39cebeae-4a53-4f55-9ab2-1b9b958a2bcb",
+    "return_url": "http://localhost:3000/return",
+    "cancel_url": "http://localhost:3000/cancel"
+  }
+```
+
+Proceed to you this response as instructed in the [Using react](#using-react)
+
+
+
+
+
 
 ## Contributing
 
