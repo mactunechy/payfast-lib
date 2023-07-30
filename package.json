@@ -1,8 +1,8 @@
 {
   "name": "payfast-lib",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A flexible easy to use payfast express handler for Node.js applications",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "build:dev": "tsc --watch",
