@@ -1,14 +1,14 @@
 {
-  "name": "payfast",
+  "name": "payfast-lib",
   "version": "1.0.0",
-  "description": "",
+  "description": "A flexible easy to use payfast express handler for Node.js applications",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
     "build:dev": "tsc --watch",
     "dev": "nodemon dist/server"
   },
-  "author": "",
+  "author": "Dellan Muchengapadare",
   "license": "ISC",
   "devDependencies": {
     "@types/express": "^4.17.17",
@@ -23,5 +23,8 @@
     "install": "^0.13.0",
     "uuid": "^9.0.0",
     "zod": "^3.21.4"
-  }
+  }, 
+  "types": "dist/index.d.ts",
+  "type": "commonjs",
+  "files": ["dist", "LICENSE", "README.md", "package.json"]
 }

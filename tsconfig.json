@@ -4,7 +4,8 @@
     "module": "CommonJS",
     "outDir": "dist",
     "rootDir": "src",
-    "strict": true
+    "strict": true,
+    "declaration": true
   },
   "include": [
     "src/**/*.ts"

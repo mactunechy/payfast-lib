@@ -3,7 +3,7 @@ import { handler } from "./express-handler";
 import { PayfastConfig } from "./types";
 
 export const configureHandler = (config: PayfastConfig) => ({
-  POST: handler(config),
+  POST: "TO BE implemented",
 });
 
 /**

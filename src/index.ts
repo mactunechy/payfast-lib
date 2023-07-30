@@ -1,0 +1,1 @@
+export { configureExpressHandler } from "./configureHandler";
