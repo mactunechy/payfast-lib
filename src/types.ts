@@ -59,3 +59,12 @@ export interface PayfastResponse {
   notify_url: string;
   uuid: string;
 }
+
+export interface PayfastITN extends PayfastPayload {
+  pf_payment_id: string;
+  payment_status: string;
+  amount_gross: string;
+  amount_fee: string;
+  amount_net: string;
+  signature: string;
+}
