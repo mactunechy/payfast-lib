@@ -1,7 +1,7 @@
 
 
 
-## Introoduction
+## Introduction
 
 PayFast Express Handler Adapter is a lightweight library that simplifies the integration of PayFast payment gateway with your Node.js web applications built on Express.js. PayFast is a popular South African payment processor that allows merchants to accept payments online securely and conveniently.
 
