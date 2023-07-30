@@ -46,8 +46,8 @@ Go ahead and run the following command to insatll `payfast-lib` into you project
 - Import the handler config function from `payfast-lib`
 
 ```js
-    import { configureExpressHandler } from 'payfast'  //ES6
-    const { configureExpressHandler }  = require('payfast-lib')  // CommonJS
+    import { configurePayfastExpressHandler } from 'payfast'  //ES6
+    const { configurePayfastExpressHandler }  = require('payfast-lib')  // CommonJS
 ```
 
 
@@ -62,7 +62,7 @@ Go ahead and run the following command to insatll `payfast-lib` into you project
 - Configure the payfast express handler by adding the following line of code
 
 ```js
-  configureExpressHandler(app, {
+  configurePayfastExpressHandler(app, {
     merchant_id: "{YOUR_MERCHANT_ID}",
     merchant_key: "{YOUR_MERCHANT_KEY}",
     return_url: "{YOUR_RETURN_URL}"
