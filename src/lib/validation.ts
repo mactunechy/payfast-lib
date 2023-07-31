@@ -25,3 +25,7 @@ export const PayfastPaymentSchema = z.object({
     .enum(["eft", "cc", "dc", "mp", "mc", "sc", "ss", "zp", "mt", "rcs"])
     .optional(),
 });
+
+export const isValidationError = (error: any) => {
+  return error.name === "ZodError";
+};
