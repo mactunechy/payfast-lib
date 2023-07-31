@@ -88,18 +88,21 @@ __NOTE__ : you can get your on `merchant_id` and `merchant_key` after you create
 - here is an example of the webhook implementation
 
 ```js
-  import * as querystring from 'querystring' //ES6
-  const querystring = require('querystring') //CommonJS
 
-  app.post('/api/payfast/notify', async (req,res) => {
+  app.post('/api/payfast/notify', async (req, res) => {
 
-    const body = req.body
+    const fieldsArray = await request.formData();
 
-    //Payfast payload is not JSON but a query string to we have to parse it accordingly
-    const parsedData = querstring.parse(body)
+    const data = {};
 
-    // Use the parsed data as needed
+    fieldsArray.forEach((value, key) => {
+      data[key] = value;
+    });
+    
 
+    // Use the parsed data as needed ...
+
+    return res.sendStatus(200)
   })
 
 ```
