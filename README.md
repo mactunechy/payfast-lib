@@ -190,12 +190,13 @@ __NOTE__: use `https://www.payfast.co.za/onsite/engine.js` for __production__ en
         method: "POST",
         headers,
         body: JSON.stringify({
-          {
-            "uuid": "39cebeae-4a53-4f55-9ab2-1b9b958a2bcb",
-            "return_url": "http://localhost:3000/return",
-            "cancel_url": "http://localhost:3000/cancel"
-          }
-        })
+          name_first: "Dellan",
+          name_last: "Much",
+          email_address: "d@testc.com",
+          amount: "21",
+          item_name:"test"
+
+})
        })
 
        const data = result.json()
