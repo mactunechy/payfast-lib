@@ -50,9 +50,9 @@ const dataToString = (data: PayfastPayload): String => {
  * @returns {Promise}
  */
 export const generatePaymentIdentifier = async (
-  payload: PayfastPayload & { signature: string },
+  payload: PayfastPayload,
   config: {
-    env: "prod" | "sandbox";
+    env: "prod" | "sandbox" | undefined;
   }
 ): Promise<PayfastResponse> => {
   const pfParamString = dataToString(payload);
