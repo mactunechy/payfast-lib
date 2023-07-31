@@ -9,7 +9,7 @@ export interface PayfastConfig {
   return_url?: string;
   cancel_url?: string;
   notify_url?: string;
-  env: "prod" | "sandbox";
+  env?: "prod" | "sandbox";
   passPhrase?: string;
 }
 
@@ -38,6 +38,7 @@ export interface PayfastPaymentProps {
   email_confirmation?: "0" | "1"; //1=on 0=off
   confirmation_address?: string;
   payment_method?: PaymentMethods;
+  signature?: string;
 }
 
 export type PaymentMethods =

@@ -1,3 +1,4 @@
+import { createPaymentSession } from "./create-payment-session";
 import { generatePaymentIdentifier, generateSignature } from "./lib/core";
 import { PayfastPaymentSchema } from "./lib/validation";
 import { PayfastConfig } from "./types";
@@ -8,26 +9,14 @@ export const nextPayfastHandler =
     const { passPhrase, env, ...restConfig } = config;
     const body = await req.json();
 
-    // Validate valid data
-    const result = PayfastPaymentSchema.safeParse(body);
-
-    if (!result.success) {
-      return new Response(JSON.stringify(result.error), { status: 400 });
-    }
-
-    const payload: any = {
-      ...restConfig,
-      ...result.data,
-    };
-
     try {
-      const signature = generateSignature(payload, passPhrase);
-      payload.signature = signature;
-      const result = await generatePaymentIdentifier(payload, { env });
-
+      const result = await createPaymentSession(config, body);
       return new Response(JSON.stringify(result), { status: 200 });
     } catch (error) {
-      console.log(error);
+      const errorName = (error as any).name;
+      if (errorName === "ZodError") {
+        return new Response(JSON.stringify(error), { status: 400 });
+      }
       return new Response("Internal error", { status: 500 });
     }
   };

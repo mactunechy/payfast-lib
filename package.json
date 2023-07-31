@@ -1,12 +1,12 @@
 {
   "name": "payfast-lib",
-  "version": "1.1.2",
+  "version": "1.1.4-alpha",
   "description": "A flexible easy to use payfast express handler for Node.js applications",
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "build:dev": "tsc --watch",
-    "dev": "nodemon dist/server"
+    "dev:express": "nodemon dist/express-test-server"
   },
   "author": "Dellan Muchengapadare",
   "license": "ISC",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "install": "^0.13.0",
     "uuid": "^9.0.0",

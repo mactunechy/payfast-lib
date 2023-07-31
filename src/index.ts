@@ -4,6 +4,7 @@ import { handler as expressHandler } from "./express-handler";
 import { PayfastConfig } from "./types";
 
 export { generateSignature, generatePaymentIdentifier } from "./lib/core";
+export { createPaymentSession } from "./create-payment-session";
 export { PayfastPaymentSchema } from "./lib/validation";
 export { nextPayfastHandler } from "./next-handler";
 /**

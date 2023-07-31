@@ -196,7 +196,7 @@ __NOTE__: use `https://www.payfast.co.za/onsite/engine.js` for __production__ en
           amount: "21",
           item_name:"test"
 
-})
+        })
        })
 
        const data = result.json()
