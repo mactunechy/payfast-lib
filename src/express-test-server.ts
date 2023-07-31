@@ -1,5 +1,5 @@
 import "dotenv/config";
-import express, { Request, Response } from "express";
+import express from "express";
 
 import { configurePayfastExpressHandler } from ".";
 
@@ -16,7 +16,7 @@ configurePayfastExpressHandler(app, {
   cancel_url: process.env.CANCEL_URL!,
   notify_url: process.env.NOTIFY_URL!,
   env: process.env.ENV as "prod" | "sandbox",
-  passPhrase: "Shoerehab123",
+  passPhrase: process.env.PASSPHRASE,
 });
 
 app.listen(port, () => {
