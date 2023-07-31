@@ -1,12 +1,9 @@
 import { createPaymentSession } from "./create-payment-session";
-import { generatePaymentIdentifier, generateSignature } from "./lib/core";
-import { PayfastPaymentSchema } from "./lib/validation";
 import { PayfastConfig } from "./types";
 
 export const nextPayfastHandler =
   (config: PayfastConfig) =>
   async (req: Request): Promise<Response> => {
-    const { passPhrase, env, ...restConfig } = config;
     const body = await req.json();
 
     try {
