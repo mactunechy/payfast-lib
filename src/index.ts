@@ -5,7 +5,7 @@ import { PayfastConfig } from "./types";
 
 export { generateSignature, generatePaymentIdentifier } from "./lib/core";
 export { createPaymentSession } from "./create-payment-session";
-export { PayfastPaymentSchema } from "./lib/validation";
+export { PayfastPaymentSchema, isValidationError } from "./lib/validation";
 export { nextPayfastHandler } from "./next-handler";
 /**
  * This function invocation should come below  `app.use(express.json())`

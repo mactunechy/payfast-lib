@@ -1,6 +1,7 @@
 import { PayfastConfig } from "./types";
 import { Request, Response } from "express";
 import { createPaymentSession } from "./create-payment-session";
+import { isValidationError } from "./lib/validation";
 
 export const handler =
   (config: PayfastConfig) =>
@@ -11,8 +12,7 @@ export const handler =
       const result = await createPaymentSession(config, body);
       return res.status(200).send(result);
     } catch (error) {
-      const errorName = (error as any).name;
-      if (errorName === "ZodError") {
+      if (isValidationError(error)) {
         return res.status(400).send(error);
       }
 

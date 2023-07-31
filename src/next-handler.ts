@@ -1,4 +1,5 @@
 import { createPaymentSession } from "./create-payment-session";
+import { isValidationError } from "./lib/validation";
 import { PayfastConfig } from "./types";
 
 export const nextPayfastHandler =
@@ -10,8 +11,7 @@ export const nextPayfastHandler =
       const result = await createPaymentSession(config, body);
       return new Response(JSON.stringify(result), { status: 200 });
     } catch (error) {
-      const errorName = (error as any).name;
-      if (errorName === "ZodError") {
+      if (isValidationError(error)) {
         return new Response(JSON.stringify(error), { status: 400 });
       }
       return new Response("Internal error", { status: 500 });
