@@ -283,7 +283,7 @@ Thank you for considering contributing to our project! We welcome contributions 
 
 ### Issues
 
-If you encounter any issues or bugs while using our project, please [open a new issue](https://github.com/yourusername/your-repo/issues) on GitHub. Please make sure to include detailed information about the problem, steps to reproduce it, and the environment in which you encountered it.
+If you encounter any issues or bugs while using our project, please [open a new issue](https://github.com/mactunechy/payfast-lib/issues) on GitHub. Please make sure to include detailed information about the problem, steps to reproduce it, and the environment in which you encountered it.
 
 ### Pull Requests
 
