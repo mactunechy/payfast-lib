@@ -65,7 +65,7 @@ Go ahead and run the following command to insatll `payfast-lib` into you project
   configurePayfastExpressHandler(app, {
     merchant_id: "{YOUR_MERCHANT_ID}",
     merchant_key: "{YOUR_MERCHANT_KEY}",
-    return_url: "{YOUR_RETURN_URL}"
+    return_url: "{YOUR_RETURN_URL}",
     cancel_url: "{YOUR_CANCEL_URL}",
     /**
      * Recieve instant payment notifications (IPNs) to this notify webhook. create the webbook on your.
@@ -207,8 +207,8 @@ __NOTE__: use `https://www.payfast.co.za/onsite/engine.js` for __production__ en
 
       //Opening the payfast UI widget
       window.payfast_do_onsite_payment({
-        uuid: data.uuid
-        return_url: data.return_url
+        uuid: data.uuid,
+        return_url: data.return_url,
         cancel_url: data.cancel_url
       })
 
@@ -216,7 +216,19 @@ __NOTE__: use `https://www.payfast.co.za/onsite/engine.js` for __production__ en
 
 ```
 
-## Next.js 13 support
+## Next.js 14 support
+Use the response to render the the Payment form in your user interface using `Payfast` javascript bundle
+
+add the following lines to your `page.ts` within your form component 
+
+```tsx
+import Script from 'next/script'
+
+<Script src="https://sandbox.payfast.co.za/onsite/engine.js" />
+```
+__NOTE__: use `https://www.payfast.co.za/onsite/engine.js` for __production__ env refer to payfast docs
+
+
 Add a new payfast api route to your project by creating the following folder structure
 ```
 app
@@ -232,7 +244,7 @@ import { nextPayfastHandler } from "payfast-lib";
 export const POST = nextPayfastHandler({
   merchant_id: "{YOUR_MERCHANT_ID}",
   merchant_key: "{YOUR_MERCHANT_KEY}",
-  return_url: "{YOUR_RETURN_URL}"
+  return_url: "{YOUR_RETURN_URL}",
   cancel_url: "{YOUR_CANCEL_URL}",
   /**
    * Recieve instant payment notifications (IPNs) to this notify webhook. create the webbook on your.
